@@ -4,3 +4,8 @@
 *.fls
 *.log
 .DS_Store
+*.out
+*.snippets
+*.toc
+*.dvi
+_minted-main

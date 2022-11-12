@@ -1,0 +1,45 @@
+\ProvidesPackage{nwstyle}
+
+% fonts
+\usepackage{libertine}
+\usepackage{libertinust1math}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+
+% margins and page no.
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\usepackage{nopageno}
+
+% headers
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{\footnotesize \parbox{11cm}{Review Notes} }
+\rhead{\footnotesize CS121: System Skills and Low-Level Programming}
+\rfoot{\footnotesize Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% links
+\usepackage{hyperref}
+
+% chapters
+\usepackage{titlesec, blindtext, xcolor}
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+
+% math and algo stuff
+\usepackage{amsmath, amsfonts, amsthm, amssymb}
+\usepackage{algorithmicx, mathtools, algorithm, algpseudocode}
+
+% code
+\usepackage{verbatim}
+\usepackage{pygmentex}
+\usepackage{minted}
+\usemintedstyle{tango}
+
+% multi-file setup
+\usepackage{blindtext}
+\usepackage{subfiles}

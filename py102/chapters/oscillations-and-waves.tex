@@ -239,3 +239,61 @@ The period can also be computed with
 \end{equation}
 This can also be used to find the moment of inertia of a flat, rigid object, given that the location 
 of CM is and $d$ is known.
+
+\section{Damped Oscillations}
+
+So far, we have only analyzed ideal systems where the oscillations will continue indefinitely.
+However, that is not realistic as friction and air resistance exist in real systems. Consequently,
+$E$ of the system decreases over time and the motion is considered \textbf{damped}. This done through 
+the conversion of mechanical energy into internal energy.
+
+The force that decreases the total mechanical energy of the system is referred as the \textbf{retarding
+force}. A common type is when the force is proportional to the speed and acts in the opposite direction 
+of the velocity of the object. Letting $\vec{R} = -b\vec{v}$ be the retarding force where $b$ is a
+constant called the \textbf{damping coefficient} and $-kx$ being the restoring force, we can express 
+Newton's second law as \[ \sum F_x = -kx -bv_x = ma_x \] 
+then rearranged into
+\begin{equation}\label{15.31}
+    -kx - b\frac{dx}{dt} = m\frac{d^2x}{dt^2}
+\end{equation}
+
+When $b$ is small, the solution to~\eqref{15.31} is
+\begin{equation}
+    x = Ae^{-(b/2m)t}\cos(\omega t + \phi)
+\end{equation}
+where the angular frequency of oscillation is 
+\begin{equation}
+    \omega = \sqrt{\frac{k}{m} - {\left(\frac{b}{2m}\right)}^2}
+\end{equation}
+Here, $\sqrt{k/m}$ represents the \textit{natural frequency} of the system, which is essentially the 
+undamped oscillator.
+
+\begin{center}
+    \includegraphics[scale=0.3]{images/oaw/damped01}
+\end{center}
+
+Consider the diagram above. Notice that with a small retarding force, the oscillating characteristic
+of the motion is preserved but decreases exponentially. Eventually, that motion becomes undetectable.
+Any system with this characteristic is known as a \textbf{damped oscillator}. The black dashed lines
+are known as the \textbf{envelope} of the curve, showing the exponential decay of the amplitude.
+
+Depending on the magnitude of the retarding force and $b$, it will have different effects on the
+oscillation as shown in the following figure. Note that $\omega_0 = \sqrt{k}{m}$ or the angular
+frequency without the retarding force.
+\begin{center}
+    \includegraphics[scale=0.4]{images/oaw/damped02.png}
+\end{center}
+\begin{itemize}
+    \item $b$ is small such that $b/2m < \omega_0$: the system is \textit{underdamped}, represented
+        by the blue line
+    \item $b$ reaches a critical point $b_c$ where $b_c/2m = \omega_0$: system does not 
+        oscillate anymore and is said to be \textit{critically damped}, meaning once released from
+        rest from some non-equilibrium position, it will approach, reach, but not pass the
+        equilibrium point $-$ represented by the red line
+    \item $b$ is large such that $b/2m > \omega_0$: the system is \textit{overdamped}, meaning it also
+        does not oscillate and just returns to equilibrium position $-$ represented by the black line
+\end{itemize}
+
+Notice that as the damping increase, the interval taken for the system to approach equilibrium also increases.
+In addition, there is no angular frequency in the case of the motion being critically damped or overdamped.
+For a clearer picture, go to this \href{https://youtu.be/99ZE2RGwqSM}{link}.

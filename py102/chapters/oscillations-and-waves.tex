@@ -206,36 +206,36 @@ Interestingly, this was how people made clocks back in the day.
 
 \subsection{Physical Pendulum}
 
+Consider the following object pivoted at point $O$ at distance $d$ from the center of mas $CM$.
+The gravitational force provides torque with magnitude $mgd\sin\theta$ as shown in the diagram below.
+
 \begin{center}
 \includegraphics[scale=0.5]{images/oaw/rotation01.png}
 \end{center}
 
-Instead of Newton's equation, we now use $\vec{\tau} = I\vec{\alpha} = \vec{r}\times\vec{F}$.
-From the diagram, we can see that the only thing generating torque is $m\vec{g}$. Let $r$ be the
-distance from the pivot to the force (note that this distance is measured from $O$ to the point
-perpendicular to the force), $r = d\sin\theta$. Now, torque will become $dmg\sin\theta$. Since
-the torque is going clock-wise, the sign is negative. With some manipulation, our final 
-approximate solution becomes
-\[ \frac{d^2\theta}{dt^2} \approx -\frac{mgd}{I}\theta \]
+We then apply the rotational form of Newton's second law $\vec{\tau} = I\vec{\alpha}$ where $I$ is
+the moment of inertia, resulting in 
+\[ -mgd \sin\theta = I\frac{d^2\theta}{dt^2} \]
+Similar to the simple pendulum, the gravitational force is acting as the restoring force.
+Also note that the reason that we use $mgd\sin\theta$ instead of $mgd$ alone is because $\tau$ is
+calculated using the perpendicular distance to the force acting on it (gravitational force in this
+case).
 
-Again, we can see that this is another simple harmonic motion where $\omega = \sqrt{(mgd)/I}$.
+Assuming that $\theta$ is small, we can use still use the approximation of $\sin$ which reduces the 
+equation of motion to 
+\begin{equation}\label{15.27}
+    \frac{d^2\theta}{dt^2} = -\left(\frac{mgd}{I}\right)\theta = -\omega^2\theta
+\end{equation}
 
-\subsection{Energy of Simple Harmonic Oscillator}
+Solving~\eqref{15.27} yields 
+\begin{equation}
+    \theta = A\sin(\omega t + \phi), \omega = \sqrt{\frac{mgd}{I}}
+\end{equation}
+where $A$ is the maximum angular position.
 
-We can first find the kinetic and potential energy by
-\begin{align*}
-    K &= \frac{1}{2}mv^2 = \frac{1}{2}m\omega^2A^2\sin^2(\omega t + \phi)\\
-    U &= \frac{1}{2}kx^2 = \frac{1}{2}A^2\cos^2(\omega t + \phi)
-\end{align*}
-
-Then, we can derive the total energy by
-\begin{align*}
-    E &= K + U\\
-    &= \frac{1}{2}m\omega^2A^2\sin^2(\omega t + \phi) + \frac{1}{2}A^2\cos^2(\omega t + \phi)\\
-    &= \frac{1}{2}kA^2 ( \sin^2(\omega t + phi) + \cos^2(\omega t + phi))\\
-    &= \frac{1}{2}kA^2
-\end{align*}
-Note that since $\omega^2 \ k / m$, $(1/2)m(k/m) = (1/2)k$.
-
-What does this mean? At any moment in time, the sum of the energy of the system must remain the same.
-This aligns with the conservation of energy.
+The period can also be computed with 
+\begin{equation}\label{15.28}
+    T = \frac{2\pi}{\omega} = 2\pi\sqrt{\frac{I}{mgd}}
+\end{equation}
+This can also be used to find the moment of inertia of a flat, rigid object, given that the location 
+of CM is and $d$ is known.

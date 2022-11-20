@@ -54,16 +54,17 @@ in the absence of friction. However, real-world systems are not frictionless, so
 Recall equation from~\eqref{15.2}, we can turn $a$ into $d^2x / dt^2$ since accerelation is just
 the second derivative of displacement and express it as
 \begin{equation}\label{15.3}
--kx = ma_x = m\frac{d^2x}{dt^2} \implies \frac{d^2x}{dt^2} = -\frac{k}{m}x
+    \frac{d^2x}{dt^2} = -\frac{k}{m}x
 \end{equation}
 
-We can then express $k/m$ as $\omega^2$ then we can rewrite~\eqref{15.3} as 
+We can then express $k/m$ as $\omega^2$ then rewrite~\eqref{15.3} as 
 \begin{equation}\label{15.5}
     \frac{d^2x}{dt^2} = - \omega^2 x
 \end{equation}
 
 We now arrive at a differential equation that we need to solve. In essence, we are trying to 
-find a function $x$ whose second-order derivative is the same as the original with a negative sign.
+find a function $x$ whose second-order derivative is the same as the original with a negative sign
+and multiplied by $\omega^2$.
 We have a few choices: polynomic with negative power, exponential, logarithmic, and trigonometric
 functions. Our choice? \textit{Trigonometric functions}, specifically $\sin$ and $\cos$. Finally,
 we have found a suitable function $x$.
@@ -73,7 +74,7 @@ we have found a suitable function $x$.
 where $A$, $\omega$, and $\phi$ are constant parameters of the motion. Then, we can plot $x$ as
 a function of $t$. These parameters (and some more) will then represent the following:
 \begin{itemize}
-    \item $A$ represents the \textbf{amplitude} $-$ the maximum value of position or $|x|\leq A$
+    \item $A$ represents the \textbf{amplitude} $-$ the maximum value of position such that $|x|\leq A$
     \item $\omega$ represents the \textbf{angular frequency} $-$ measure of how rapidly the oscillations
         are occurring, where \begin{equation}\label{15.9}
             \omega = \sqrt{\frac{k}{m}}
@@ -81,23 +82,50 @@ a function of $t$. These parameters (and some more) will then represent the foll
     \item $\phi$ represents the \textbf{phase constant} or \textbf{initial phase angle} $-$
         determined by the position and velocity position and velocity of object at $t=0$, where
         if $x=A$ at $t=0$, $\phi = 0$
-    \item Quantity $(\omega t + \phi)$ represents the \textbf{phase} of the motion and the value of
-        $x(t)$ has the same value when the $\omega t$ increasees by $2\pi$ radians
-    \item $T$ represents the \textbf{period}, the time interval for object to return to go through
-        a full cycle of motion
 \end{itemize}
 
+Another quantity to know is $(\omega t + \phi)$ or the \textbf{phase} of the motion.
+Notice that the value of $x(t)$ has the same value when the $\omega t$ increases by $2\pi$ radians.
 
-\subsection{Interpretation}
+Now, we will also introduce another value $T$ representing the \textbf{period} which refers to 
+the time interval for an object to go through a full cycle of motion. This essentially means that 
+the speed and position of the object at time $t$ and $t+T$ will be the same. This can be further
+summarized $-$ using the property of phase $-$ down to 
+\[ \left[\omega(t + T) + \phi\right] - (\omega t +\phi) = 2\pi \]
+since when the phase is added by $2\pi$, the $x(t)$ reverts to its original value.
 
-We can interpret $\omega$ as the angular frequency which is $2\pi f = 2\pi / T$.
-Knowing that $\omega = \sqrt{k/m}$, this means that for a given spring with a certain $k$ and mass $m$,
-we cannot change the way that it oscillates. No matter how much we stretch, it's going to bounce with
-that frequency. This is called the \textbf{Natural Frequency}. The only way to change is to change 
-the value of $k$ and $m$.
+Simplifying the above equation gives us
+\begin{equation}\label{15.10}
+    T = \frac{2\pi}{\omega}
+\end{equation}
 
-Simple Harmonic Motion refers to a motion with a single frequency $-$ $\omega$.
-Obviously, there exists Harmonic Motion that are not simple. However, it is out of the scope of this course.
+One more quantity we should know is the \textbf{frequency} $f$, the inverse of the period.
+Since the period is the time interval per oscillation, the frequency is oscillations per time interval.
+This can be modeled under
+\begin{equation}\label{15.11}
+    f = \frac{1}{T} = \frac{\omega}{2\pi}
+\end{equation}
+and its units are cycles per second or \textit{hertz} (Hz). Rearranging the above equation yields
+\begin{equation}\label{15.12}
+    \omega = 2\pi f = \frac{2\pi}{T}
+\end{equation}
+
+If we converted $\omega$ back to its original value of $\sqrt{k/m}$, we will notice that $T$ and $f$
+depend solely on the mass of the object and the force constant of the spring.
+
+Additionally, since $x(t) = A\sin(\omega t + \phi)$ represents the position of the object, we can
+find the velocity and acceleration squared of the object under S.H.M. using
+\begin{eqnarray}
+    v = \frac{dx}{dt} = \omega A\cos(\omega t + \phi)\\
+    a = \frac{d^2x}{dt^2} = -\omega^2 A\sin(\omega t + \phi)
+\end{eqnarray}
+
+Notice from both equations that since $\cos$ and $\sin$ both have range of $[-1, 1]$, the range of 
+the velocity and acceleration are as following
+\begin{eqnarray}
+    v_{\max} = \omega A\\
+    a_{\max} = \omega^2 A
+\end{eqnarray}
 
 \subsection{Equation of Motion on a Pendulum}
 

@@ -165,34 +165,46 @@ energy. Thus, their sum will always be equal to $(1/2)kA^2$.
 
 \section{Pendulum}
 
+Consider the following \textit{simple pendulum}
 \begin{center}
-\includegraphics[scale=0.3]{images/oaw/pendulum01.png}
+\includegraphics[scale=0.6]{images/oaw/pendulum01.png}
 \end{center}
+It consists of a bob with mass $m$ suspended by a light string of length $L$. Now, let us
+show that given that $\theta$ is small, the motion is very close to being simple harmonic.
 
-In order to analyze the motion of the pendulum, we can break down said motion into the vertical and
-horizontal components. We can say that the tension $T = mg\cos\theta$ then completely ignore the motion's
-vertical component as they cancel out. Therefore, the only remaining forces will be
-\[\sum F_t = ma_t \implies -mg\sin\theta = m\frac{d^2s}{dt^2}\]
-where $s$ is the tangential distance (displacement in circular motion). Once we cancel everything
-and rearrange it such that it looks like our previous differential equation, we will get
-\[ \frac{d^2s}{dt^2} = -g\sin\theta \]
+The external forces acting upon the bob are the gravitational force $m\vec{g}$ and the tension
+$\vec{T}$. Notice that the tangential component of the gravitational force $m\vec{g}\sin\theta$
+always acts towards $\theta = 0$, which is opposite of the displacement relative to equilibrium.
+Thus, we can denote the tangential component as the \textit{restoring force}. Using Newton's 
+second law, we obtain
+\[ F_t = ma_t \rightarrow -mg\sin\theta = m\frac{d^2s}{dt^2} \] 
+where $s$ denotes the bob's position along the arc. Since $s = L\theta$, this reduces to
+\[ \frac{d^2\theta}{dt^2} = - \frac{g}{L}\sin\theta \]
 
 This is where we need to face the harshness of reality. We cannot solve this equation, not without
-a computer. However, we can use some approximation tricks to help us.
+a computer. However, we can use some approximation tricks to help us. If the angle of swing $\theta$ 
+is small ($< 10^\circ$), $\sin\theta \approx \theta$ in radians. Thus, we obtain
+\begin{equation}
+    \frac{d^2\theta}{dt^2} \approx -\frac{g}{L}\theta
+\end{equation}
 
-If the angle $\theta$ of swing is small, $\sin\theta \approx \theta$. We can also change $s$ into 
-something easier to deal with. Since we know that $\theta = s/L$ where $L$ is the radius, we can
-express $s$ as $\theta L$. With some manipulation, our equation then becomes
-\[ \frac{d^2(\theta)}{dt^2} \approx -\frac{g}{L}\theta \]
+Now, we cn conclude that the motion of pendulums with small amplitudes can be modelled as simple 
+harmonic motion. Therefore, the (approximate) solution to this equation of motion is
+\begin{equation}
+    \theta(t) = A\sin(\omega t + \phi), \omega = \sqrt{\frac{g}{L}}
+\end{equation}
+where $A$ is the maximum angular position or $\theta_{\max}$.
 
-Therefore, the (approximate) solution to this equation of motion is
-\[ \theta(t) = A\sin(\omega t + \delta), \omega = \sqrt{\frac{g}{L}} \]
+From the above equations, we can also derive that the period of this motion is
+\begin{equation}
+    T = \frac{2\pi}{\omega} = 2\pi\sqrt{\frac{L}{g}}
+\end{equation}
 
 In this case, mass does not even matter to the oscillation. The only things that matter are the 
 gravitational accerelation ($g$) and the length of the string attached to your pendulum ($L$).
 Interestingly, this was how people made clocks back in the day.
 
-\subsection{Equation of Motion on Rotation}
+\subsection{Physical Pendulum}
 
 \begin{center}
 \includegraphics[scale=0.5]{images/oaw/rotation01.png}

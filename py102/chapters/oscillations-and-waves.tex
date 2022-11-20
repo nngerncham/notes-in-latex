@@ -1,36 +1,92 @@
 \chapter{Oscillations and Waves}
 
-\section{Simple Harmonic Motion (S.H.M.)}
+\textbf{Periodic Motion} is a motion that regularly returns a certain position after fixed time.
+\textbf{Simple Harmonic Motion} is a special kind of periodic motion where the magnitude of the 
+net force acting on an object is proportional to the position of said object and its direction
+opposite of the displacement of said object relative to its equilibrium position.
 
-\subsection{Equation of Motion}
+\section{Motion of an Object Attached to a Spring}
 
-Consider the following systems.
+Consider the following system.
 
 \begin{center}
-\includegraphics[scale=0.5]{oaw/spring01.png}
+\includegraphics[scale=0.5]{oaw/spring01.png}\label{fig15.1}
 \end{center}
 
-From Physics I, we know that we can use Hooke's Law to calculate the spring force. \[ \vec{F_s} = -kx \]
+When the spring is neither stretched or compressed, the block is at the \textbf{equilibirum position},
+denoting as $x = 0$. When force is applied, the position of the block will move back and forth in an 
+oscillating motion. We can model this using Hooke's law.
 
-When the spring is stretched, $\vec{F_s}$ is negative. When the spring is at equilibrium,
-$\vec{F_s} = 0$. If the spring is compressed, $\vec{F_s}$ is positive. There is only one force,
-everything is in 1D, and everything is equal to $ma$ from Newton's $F = ma$. Thus, we can
-derive the \textbf{Equation of Motion}. \[ \sum F_x = -kx = ma_x \]
+\begin{equation}\label{15.1}
+    F_s = -kx
+\end{equation} 
 
-In our equation, we can turn $a$ into $d^2x / dt^2$ since accerelation is just the second
-derivative of displacement. Then, through some manipulation, we can derive
-\[ -kx = ma_x = m\frac{d^2x}{dt^2} \implies \frac{d^2x}{dt^2} = -\frac{k}{m}x \]
-which is a differential equation we need to solve. Now, what sort of function $x(t)$ do we 
-use such that its second derivative would still contain an $x$ term and is negative?
+Here, we call $F_s$ the \textbf{restoring force} as it is always directed towards the equilibrium position.
+Thus, it will always be opposite of the displacement of the block. Since there is some net force
+acting on the object, even when released, we can apply Newton's second law of motion onto~\eqref{15.1}
+to obtain
 
+\begin{equation*}
+    \sum F_x = ma_x \rightarrow -kx = ma_x
+\end{equation*}
+
+\begin{equation}\label{15.2}
+    a_x = - \frac{k}{m}x
+\end{equation}
+
+This shows that the force applied on the object is proportional to $x$ and direction is opposite 
+of the displacement. This is an example of a simple harmonic motion.
+
+An example of how an object moves $-$ given the object starts at displacement $x=A$ and $x=0$ is the
+equilibrium position:
+\begin{itemize}
+    \item Once released from rest, initial acceleration $a_i = -kA/m$ and speed is 0
+    \item Once block is at $x=0$, acceleration is also zero and speed is at maximum
+    \item Passing $x=0$, it moves with positive acceleration until $x=-A$, $a = +kA/m$, and speed is 0
+    \item Moves back and passes $x=0$ again with maximum speed
+\end{itemize}
+
+In conclusion, the object oscillates between $x \in [-A, A]$. Note that we are consider this system
+in the absence of friction. However, real-world systems are not frictionless, so please do keep that in mind.
+
+\section{Analysis Model: Particle in Simple Harmonic Motion}
+
+Recall equation from~\eqref{15.2}, we can turn $a$ into $d^2x / dt^2$ since accerelation is just
+the second derivative of displacement and express it as
+\begin{equation}\label{15.3}
+-kx = ma_x = m\frac{d^2x}{dt^2} \implies \frac{d^2x}{dt^2} = -\frac{k}{m}x
+\end{equation}
+
+We can then express $k/m$ as $\omega^2$ then we can rewrite~\eqref{15.3} as 
+\begin{equation}\label{15.5}
+    \frac{d^2x}{dt^2} = - \omega^2 x
+\end{equation}
+
+We now arrive at a differential equation that we need to solve. In essence, we are trying to 
+find a function $x$ whose second-order derivative is the same as the original with a negative sign.
 We have a few choices: polynomic with negative power, exponential, logarithmic, and trigonometric
 functions. Our choice? \textit{Trigonometric functions}, specifically $\sin$ and $\cos$. Finally,
 we have found a suitable function $x$.
+\begin{equation}\label{15.6}
+    x(t) = A\sin(\omega t + \phi)
+\end{equation} 
+where $A$, $\omega$, and $\phi$ are constant parameters of the motion. Then, we can plot $x$ as
+a function of $t$. These parameters (and some more) will then represent the following:
+\begin{itemize}
+    \item $A$ represents the \textbf{amplitude} $-$ the maximum value of position or $|x|\leq A$
+    \item $\omega$ represents the \textbf{angular frequency} $-$ measure of how rapidly the oscillations
+        are occurring, where \begin{equation}\label{15.9}
+            \omega = \sqrt{\frac{k}{m}}
+        \end{equation}
+    \item $\phi$ represents the \textbf{phase constant} or \textbf{initial phase angle} $-$
+        determined by the position and velocity position and velocity of object at $t=0$, where
+        if $x=A$ at $t=0$, $\phi = 0$
+    \item Quantity $(\omega t + \phi)$ represents the \textbf{phase} of the motion and the value of
+        $x(t)$ has the same value when the $\omega t$ increasees by $2\pi$ radians
+    \item $T$ represents the \textbf{period}, the time interval for object to return to go through
+        a full cycle of motion
+\end{itemize}
 
-\[ x(t) = A\sin(\omega t + \phi) \]
-
-We can also choose to use the $\cos$ function as well as they give the same result. Essentially,
-we can convert between $\sin$ and $\cos$ since we have the $\phi$ term.
 
 \subsection{Interpretation}
 

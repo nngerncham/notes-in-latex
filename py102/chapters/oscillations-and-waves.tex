@@ -116,8 +116,8 @@ depend solely on the mass of the object and the force constant of the spring.
 Additionally, since $x(t) = A\sin(\omega t + \phi)$ represents the position of the object, we can
 find the velocity and acceleration squared of the object under S.H.M. using
 \begin{eqnarray}
-    v = \frac{dx}{dt} = \omega A\cos(\omega t + \phi)\\
-    a = \frac{d^2x}{dt^2} = -\omega^2 A\sin(\omega t + \phi)
+    v = \frac{dx}{dt} = \omega A\cos(\omega t + \phi)\label{15.15}\\
+    a = \frac{d^2x}{dt^2} = -\omega^2 A\sin(\omega t + \phi)\label{15.16}
 \end{eqnarray}
 
 Notice from both equations that since $\cos$ and $\sin$ both have range of $[-1, 1]$, the range of 
@@ -127,7 +127,43 @@ the velocity and acceleration are as following
     a_{\max} = \omega^2 A
 \end{eqnarray}
 
-\subsection{Equation of Motion on a Pendulum}
+\section{Energy of Simple Harmonic Oscillator}
+
+Once we have analyzed a S.H.M. with its forces, we now analyze it with its energy. Consider the 
+same system from~\ref{fig15.1}. Let us make a few assumptions: that our spring has no mass and the 
+surface is frictionless.
+
+Recall equation~\eqref{15.15}, we can use it to express the kinetic energy of the block as 
+\begin{equation}\label{15.19}
+    K = \frac{1}{2}mv^2 = \frac{1}{2}m\left(\omega^2 A^2 \cos^2(\omega t + \phi)\right)
+\end{equation}
+We refer to this as the \textit{kinetic energy of a simple harmonic oscillator}.
+
+Then, we can use equation~\eqref{15.16} for the elastic potential energy from the spring
+\begin{equation}\label{15.20}
+    U = \frac{1}{2}kx^2 = \frac{1}{2}k\left(A^2 \sin^2(\omega t + \phi)\right)
+\end{equation}
+We refer to this as the \textit{potential energy of a simple harmonic oscillator}.
+
+\begin{center}\label{fig15.9}
+\includegraphics[scale=0.5]{images/oaw/fig15_9.png}
+\end{center}
+Once plotted, notice that $K$ and $U$ are always positive or zero. We can then express the total
+mechanical energy of the system as 
+\begin{equation}\label{fullE}
+    E = K + U = \frac{1}{2}kA^2\left[ \cos^2(\omega t + \phi) + \sin^2(\omega t + \phi) \right]
+\end{equation}
+
+Using trigonometric identity, we can simplify $E$ down to 
+\begin{equation}\label{15.21}
+    E = \frac{1}{2}kA^2
+\end{equation}
+
+This shows that $E$ is a constant of the motion and proportional to the square of the amplitude.
+Notice that at the end of the day, it is simply a conversion between the the kinetic and potential
+energy. Thus, their sum will always be equal to $(1/2)kA^2$.
+
+\section{Pendulum}
 
 \begin{center}
 \includegraphics[scale=0.3]{images/oaw/pendulum01.png}

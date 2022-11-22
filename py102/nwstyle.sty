@@ -30,9 +30,21 @@
     urlcolor=blue
 }
 
+% paragraph
+\usepackage{multicol}
+
 % images
 \usepackage{graphicx}
 \graphicspath{{./images/}}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+\usepackage{caption}
+\usepackage{subcaption}
+\newcommand{\cim}[2]{
+    \begin{center}
+        \includegraphics[width=#2\textwidth]{#1}
+    \end{center}
+}
 
 % chapters
 \usepackage{titlesec, blindtext}

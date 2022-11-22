@@ -210,3 +210,88 @@ wave function of
     y(x, t) = A\sin(kx - \omega t + \phi)
 \end{equation}
 where we can determine the value of $\phi$ ourselves.
+
+\subsection{Sinusoidal Waves on Strings}
+
+Consider the following diagrams.
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/oaw/fig16_10a.png}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/oaw/fig16_10b.png}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/oaw/fig16_10c.png}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/oaw/fig16_10d.png}
+\end{subfigure}
+\end{figure}
+
+We know that the string will oscillate with simple harmonic motion. Thus, each element of the string
+will also oscillate with simple harmonic motion. Notice that while the elements of the string move 
+in the $y$ direction, the wave moves in the $x$ direction with speed $v$.
+
+We can now express the wave function as 
+\[ y = A\sin(kx - \omega t) \]
+and we can use it to describe any element of the string. Thus, the \textit{transverse speed} $v_y$
+and \textit{transverse acceleration} $a_y$ of the elements can be expressed as 
+\begin{eqnarray}
+    v_y = \frac{\partial y}{\partial t} = -\omega A\cos(kx - \omega t)\label{16.14}\\
+    a_y = \frac{\partial v_y}{\partial t} = -\omega^2 A\sin(kx - \omega t)\label{16.15}
+\end{eqnarray}
+since $y$ describes the position of the element and $x$ is constant. Additionally, the maximum 
+magnitudes can be expressed as 
+\begin{eqnarray}
+    \max(v_y) = = -\omega A\label{16.16}\\
+    \max(a_y) = = -\omega^2 A\label{16.17}
+\end{eqnarray}
+However, note that they will not reach the maximum magnitude at the same time. For $v_y$, it will 
+reach its maximum magnitude when $y=0$. For $a_y$, it will its maximum magnitude when $y=\pm A$.
+
+\section{Speed of Waves on Strings}
+
+When $A$ is small relative to $\lambda$, the wave both parameters are representing can be represented
+as a linear wave.
+Here, we will use mechanical analysis to find the speed of a pulse traveling through a stretched 
+string under tension $T$. However, instead of having a fixed intertial reference frame, we will 
+use one that moves along the string at the same speed of the pulse such that the pulse appears
+fixed in the frame but the elements of the string are moving left at some $v$.
+
+Consider a wave right with uniform speed $v$ as shown in the diagram below. 
+
+\cim{images/oaw/fig16_11a.png}{0.4}
+
+Focus on a short portion of the string of length $\Delta s$. It forms an approximate arc of a
+circle with radius $R$.
+\cim{images/oaw/fig16_11b.png}{0.4}
+Since the elements are moving left with speed $v$ in our moving reference frame, we can model 
+their movement using uniform circular motion with centripetal acceleration of $v^2/R$. This comes 
+from the tension force $\vec{T}$ acting on the string from both sides tangentially to the arc.
+The horizontal components of $\vec{T}$ cancel out while the vertical components $T\sin\theta$
+acts downward. Thus, the total radial force on the element is double that quantity. We can also use
+the small-angle approximation to simplify the radial force down to
+\[ F_r = 2T\sin\theta \approx 2T\theta \]
+
+Let $\mu$ be the mass per unit length of the string, we can express the mass of the element as 
+\[ m = \mu\Delta s = 2\mu R\theta \]
+where $\Delta s = 2R\theta$. Why? \textit{I'm not very sure.}
+
+Finally, we can model the element of the string using Newton's second law in circular motion 
+\[ F_r = \frac{mv^2}{R} \rightarrow 2T\theta = \frac{2\mu R\theta v^2}{R} \rightarrow T = \mu v^2 \]
+and solving for $v$ gives
+\begin{equation}\label{16.18}
+    v = \sqrt{\frac{T}{\mu}}
+\end{equation}
+
+Note that this only works if we assume that $A$ is small relative to the wavelength since it makes
+$\theta$ small, meaning that we would be able to use the small-angle approximation. We also need 
+to assume that the tension is not affected by the pulse. However, the speed of a pulse with any shape
+can be computed using this model.

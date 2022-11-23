@@ -17,3 +17,105 @@ more traveling waves are moving through a medium, the resulting
 wave is the value of the wave function at any point is the algebraic
 sum of the values of the wave functions of the individual waves}.
 Waves that follow this principle are called \textbf{linear waves}.
+
+When two waves combine in the same region of space, it results in a new wave 
+that is the combination of the two original waves. This phenomena is called
+\textbf{inteference}. There are two main types of inteference:
+\begin{itemize}
+    \item \textbf{Constructive interference}: the amplitudes of both original waves are
+        positive, so the resultant wave has even bigger amplitude
+    \item \textbf{Destructive interference}: the amplitudes of both original waves have
+        opposite signs, so the absolute resultant wave would be difference of absolutes
+        of the original waves
+\end{itemize}
+
+\subsection{Superposition of Sinusoidal Waves}
+
+Consider two waves sinusoidal waves with the same amplitude but with different phase.
+We can express them as 
+\[ y_1 = A\sin(kx - \omega t) \quad y_2 = A\sin(kx - \omega t + \phi) \]
+If we combine the two waves, we will get
+\[ y = y_1 + y_2 = A\left[\sin(kx - \omega t) + \sin(kx - \omega t + \phi)\right] \]
+
+Using the trig-identity $\sin a + \sin b = 2\cos((a-b)/2)\sin((a+b)/2)$,
+we can simplify the resultant wave to 
+\begin{equation}
+    y = 2A\cos\left(\frac{\phi}{2}\right)\sin\left(kx - \omega t + \frac{\phi}{2}\right)
+\end{equation}
+Here, notice that the amplitude of $y$ becomes $2A\cos(\phi/2)$ and the phase becomes $\phi/2$
+
+Depending on the phase constant, the resultant wave $y$ will have one of the following amplitudes
+\begin{itemize}
+    \item $\phi = 0$: $\cos(\phi/2) = \cos(0) = 1\ \therefore\ A_y = 2A$ and the crest
+        of $y$ are at the same location as $y_1$ and $y_2$
+        (This also has a name $-$ \textit{in-phase})
+    \item $\phi = \pi$ or any of its odd multiple: the crest of one wave is at the position of
+        the trough of the other, causing a destructive interference leading to $A_y = 0$ since 
+        the amplitudes of $y_1$ and $y_2$ are the same
+    \item $\phi = 2\pi$ or any other even multiple: $A_y$ will be somewhere between $0$ and $2A$
+\end{itemize}
+
+\subsection{Interference of Sound Waves}
+
+The distance along given path from source to receiver is called the \textbf{path length} $r$.
+From the above diagram, notice that $r_1$ is fixed while $r_2$ can vary by shifting the grey tube.
+The difference in path length can be computed by $\Delta r = |r_2 - r_1|$.
+\begin{itemize}
+    \item If $\Delta r = 0$ or is an integer multiple of the wavelength, the two waves will
+        will reach the receiver in phase, creating a constructive inteference, also with max amplitude
+    \item If $\Delta r = \lambda/2$ or some odd multiple of it, the two waves are exactly
+        $\pi$ radian out of phase and will cancel each other out 
+\end{itemize}
+
+\section{Standing Waves}
+
+Suppose we have two speakers facing each other playing the same sounds but in opposite direction,
+we can express the wave function for both as 
+\[ y_1 = A\sin(kx - \omega t)\quad y_2 = A\sin(kx + \omega t) \]
+We can use trigonometric identity $\sin(a \pm b) = \sin a\cos b \pm \cos a \sin b$
+to reduce their sum down to \begin{equation}\label{18.1}
+    y = 2A\sin(kx)\cos(\omega t)
+\end{equation}
+This equation represents the wave function of a \textbf{standing wave}, meaning that it is
+the wave does not seem to be traveling, just oscillating within the outline of $2A\sin(kx)$.
+
+Notice that when $\sin(kx) = 0$, when $kx = n\pi$ for some integer $n$, or when $x =
+(n\lambda)/2$ for some integer $n$ (since $k=\lambda/2$), the amplitude will always
+be zero. These points are called the \textbf{nodes}, basically the point with no oscillation.
+
+In contrast, elements of the string with the greatest possible displacement from equilibrium
+with amplitude of $2A$ are called \textbf{antinodes}. These are located when $\sin(kx) = \pm 1$.
+These occur when $x = n\lambda/4$ for some odd integer $n$.
+
+\section{Standing Waves in Air Columns}
+
+From the definition of nodes, we know that each node are $\lambda/2$ distance away from each
+other. Since antinodes are in the middle between two nodes and vice versa, we can say that
+the distance between a node and an antinode is $\lambda/4$.
+
+Consider a first (fundamental) harmonic standing wave in a pipe of length $L$ where one end is
+closed and is the point of a node, and the other end is open and is the point of an antinode,
+this means that the length of the tube is related to the wavelength by 
+\[ L = \lambda/4 \quad \lambda = 4L \]
+We can define the wavelength and frequency as 
+\[ \lambda_1 = 4L\quad f_1 = \frac{v}{\lambda_1} = \frac{v}{4L} \]
+
+If we were to add more \textit{flips} or another pair of node and antinode into the pipe, we can 
+model the wavelength and the frequency by the following 
+\[ \lambda_i = \frac{4}{i}L\quad f_i = i f_1 \]
+and it is called the $i$-th harmonic wave. Note that $i$ is an odd integer since $L = \lambda/4$ and 
+adding another a node and an antinode into the pipe means that we need to fit another $\lambda/2$
+in to $L$.
+
+\cim{images/ch18/fig18_13b}{0.4}
+
+In the case that the pipe with length $L$ has two open ends, both ends will need to be the antinode
+with a node in the middle of each. Knowing that antinodes are $\lambda/2$ apart from each other and 
+the antinodes at each end are $L$ apart, we can define the wavelength and frequency as
+\[ \lambda_1 = 2L\quad f_1 = \frac{v}{\lambda_1} = \frac{v}{2L} \]
+
+If we want to add more \textit{flips} or antinodes into the pipe, we can model the wavelength and
+frequency by the following \[ \lambda_i = \frac{2}{i}L \quad f_i = i f_1 \]
+and it is called the $i$-th harmonic wave.
+
+\cim{images/ch18/fig18_13a}{0.4}

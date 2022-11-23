@@ -1,0 +1,89 @@
+\chapter{The Nature of Light and the Principles of Ray Optics}
+
+\section{The Ray Approximation in Ray Optics}
+
+Let us first define the following terms:
+\begin{itemize}
+    \item \textbf{Wave fronts}: an imaginary \textit{surface} representing points of waves that move 
+        in unison
+    \item \textbf{Rays}: imaginary lines along the direction that a wave is traveling
+    \item \textbf{Geometric optics}: using geometry to analyze how light travels, ignoring inteference
+        and diffraction of waves
+\end{itemize}
+
+\section{Analysis Model: Wave Under Reflection}
+
+When a light ray hits a surface of another medium, part of that light is reflected. If the surface 
+is smooth and every light ray reflected is parallel to each other, we call it \textbf{specular
+reflection}. However, if the surface is rough and the reflected light rays aren't so parallel, we
+call it \textbf{diffuse reflection}.
+\cim{images/ch35/35_5.png}{0.65}
+
+Consider a light ray hitting a smooth surface as shown in the diagram below. The incident and 
+reflected angle are $\theta_1$ and $\theta_1'$ respectively. Note that this angle is measured from 
+the normal line which perpendicular to the surface.
+\cim{images/ch35/35_6.png}{0.35}
+
+The angles can be modeled as 
+\begin{equation}\label{35.2}
+    \theta_1 = \theta_1'
+\end{equation}
+as is expressed under the \textbf{law of reflection}.
+
+\section{Analysis Model: Wave Under Refraction}
+
+In addition to the waves being reflected, some of the energy from the incident wave is also transferred
+into the new medium. The ray enters the new medium and changes its direction at the boundary. That 
+change is called \textbf{refraction}.
+\cim{images/ch35/35_10.png}{0.4}
+
+The \textbf{angle of refraction} $\theta_2$ can be modeled with the following relationship$-$Snell's Law.
+\begin{equation}\label{35.3}
+    \frac{\sin\theta_2}{\sin\theta_1} = \frac{v_2}{v_1} = \frac{n_2}{n_1} = \frac{\lambda_1}{\lambda_2}
+\end{equation}
+where 
+\begin{itemize}
+    \item $v_1$ and $v_2$ are the speed of light in the first and second medium respectively
+    \item $n = c/v$ where $v$ is speed of light in the medium and $c$ is speed of light in vacuum
+        $c \approx 3 \times10^8 m/s$
+    \item $\lambda = vf$ as we've established in previous chapters
+\end{itemize}
+
+Interestingly, refraction is \textit{reversible}, meaning that refraction would work the same way
+for when light is moving from point $A$ in one medium to point $B$ in another medium as when light 
+is moving from point $B$ to point $A$.
+
+\subsection{Index of Refraction}
+
+Let us define the \textbf{index of refraction} $n$ of a medium to be the ratio 
+\begin{equation}\label{35.4}
+    n = \frac{c}{v}
+\end{equation}
+where $c$ is the speed of light in the vacuum and $v$ is the speed of light in the medium.
+This is the same as $n$ from~\eqref{35.3}. Since $v$ is always less than $c$ since light travels 
+fastest in the vacuum, $n=1$ for the vacuum. Otherwise, $n > 1$.
+
+Additionally, we can use this to rewrite the equation for Snell's law of refraction as 
+\begin{equation}
+    n_1\sin\theta_1 = n_2\sin\theta_2
+\end{equation}
+
+\section{Total Internal Reflection}
+
+\textbf{Total internal reflection} is an effect that happens when light is travels from a medium 
+whose index of refraction is higher than the medium it is traveling to. As a result, refracted rays 
+are bent away from the normal line. At some angle of incident $\theta_c$, called the \textbf{critical
+angle}, the refracted ray moves parallel to the boundary between the two mediums. This means that 
+$\theta_c = 90\degree$. If $\theta_1 > \theta_c$the ray is entirely reflected back into the medium 
+it came from.
+
+We can use Snell's Law of Refraction to find $\theta_c$, using $\theta_1 = \theta_c, \theta_2 = 90\degree$.
+\begin{align*}
+    n_1\sin\theta_c &= n_2\sin\theta_2\\
+    n_1\sin\theta_c &= n_2\sin90\degree\\
+    \sin\theta_c &= \frac{n_2(1)}{n_1}\\
+\end{align*}
+Therefore, \begin{equation}
+    \sin\theta_c = \frac{n_2}{n_1}
+\end{equation}
+for some $n_1 > n_2$.

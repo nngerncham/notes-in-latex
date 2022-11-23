@@ -1,0 +1,131 @@
+\chapter{Sound Waves}
+
+\textbf{Sound waves} are mechanical waves that can travel through any material, though 
+most commonly through air. In this case, the disturbed elements are the air particles.
+The disturbance leads to changes in the pressure and density of the air.
+
+There are three categories of sound waves based on their frequency range:
+\begin{itemize}
+    \item \textbf{Audible waves}: frequency within range that human can hear
+    \item \textbf{Infrasonic waves}: frequency below audible range
+    \item \textbf{Ultrasonic waves}: frequency above audible range
+\end{itemize}
+
+\section{Pressure Variations in Sound Waves}
+
+To describe sound waves, picture a 1D longitudinal pulse moving through a tube filled with 
+compressible gas. There also exists a piston on the left that can move to compress the gas to 
+create the pulse. When the piston extends, it compresses the gas which changes the pressure and 
+density of the gas in the region right next to the piston. Once the piston stops, the compressed 
+region of gas moves in the direction of the push of the piston through the tube with speed $v$,
+shown on the left diagram. Additionally, the piston can move in a simple harmonic motion
+to create a periodic wave in the tube as shown in the right diagram.
+\cim{images/waves-and-sound/fig17_1.png}{0.7}
+
+Notice that once the piston moves into the tube, it creates a compressed region $-$ \textbf{compression}
+$-$ which moves through the tube and continuously compresses the gas right in front of it. Also note 
+that the pressure and density of the gas in this region is higher than equilibrium.
+Once the piston moves back, the gas in front of the piston expands and the pressure and density then 
+becomes lower than equilibrium. This region is called \textbf{rarefactions}. Both regions will
+propogate along the tube as shown in the diagram above.
+
+Since the sound wave is longitudinal, any small element of the gas also move with simple harmonic
+motion parallel to the direction of the wave. Let $s(x, t)$ be the position of the small element 
+relative to its equilibrium position, we can use it to describe the harmonic position function as 
+\begin{equation}\label{17.1}
+    s(x, t) = s_{\max}\cos(kx - \omega t)
+\end{equation}
+where $s_{\max}$ is the \textbf{displacement amplitude}, describing the maximum displacement of the
+small element from equilibrium. Like other waves, $k$ represents the wave number and $\omega$
+represents the angular frequency. Note that the displacement is horizontal, opposed to vertical 
+with the waves from the previous chapter.
+
+\section{Intensity of Periodic Sound Waves}
+
+Consider a sound source emitting sound wave in a sphere with radius $r$ centered at said source.
+This creates a \textbf{spherical wave}, assuming that the air around the source is perfectly uniform.
+The average power $P_{avg}$ must be distributed uniformly over this sphere. Here, we can define 
+the \textbf{intensity} $I$ of a wave as the rate of energy transported by the wave per unit area of
+the sphere. Recall that the area of a sphere with radius $R$ is computed by $A = 4\pi R^2$,
+we can compute the intensity at distance $r$ from source with 
+\begin{equation}\label{17.13}
+    I = \frac{P_{avg}}{A} = \frac{P_{avg}}{4\pi r^2}
+\end{equation}
+Notice that this decreases the furthur you are from the source.
+
+\subsection{Sound Level in Decibels}
+
+It is more convenient to represent the different intensities the human ear can hear with a
+logarithmic scale since the range is so wide. Thus, we can define the \textbf{sound level} $\beta$
+as \begin{equation}\label{17.14}
+    \beta = 10\log\left(\frac{I}{I_0}\right)
+\end{equation}
+Constant $I_0$ is known as the \textbf{reference intensity}, describing the threshold of hearing and
+has the value of $10^{-12} W/m^2$. $I$ is the intensity in watts per square meter at which $\beta$
+corresponds to. The unit for this is \textbf{decibels} (dB).
+
+The following table shows the sound level of different objects
+\cim{images/waves-and-sound/tab17_2.png}{0.3}
+
+\section{Doppler Effect}
+
+The \textbf{Doppler effect} describes the phenomena where the frequency of the sound you just heard
+is higher the closer the source is to you. For a high-level explanation, suppose that you are an
+observer of sound waves coming from an object that is the source of sound. If you are at rest,
+the number of waves reaching you per fixed time will be constant. However, if you move towards the 
+object, more waves will reach you in the same unit time since the distance between you and the object 
+decreases, causing the frequency to change.
+
+Now, we can describe the effect using the following equation. Additionally, we define the following
+parameters
+\begin{itemize}
+    \item $f_S$: frequency at the source
+    \item $f_O$: frequency observed
+    \item $\lambda$: source wavelength 
+    \item $v_S$: speed of source
+    \item $v_O$: speed of observer
+\end{itemize}
+
+\subsection{Source at Rest, Observer in Motion}
+
+First, recall that $v = \lambda/T$, we can express frequency as
+\[ f = \frac{v}{\lambda}, \lambda = \frac{v}{f} \]
+Since we are moving with a moving object as part of our model, we replace
+$v$ with relative velocity. If the two objects are moving towards each other, we use
+\begin{equation}\label{17.15}
+    f_O = \frac{v_{SO}}{\lambda} = \frac{v - (-v_O)}{\lambda} = \frac{v + v_O}{\lambda}
+        = \left(\frac{v + v_O}{v}\right)f_S
+\end{equation}
+
+If the observer is moving away from the source, simply change $v_{SO} = v_S - v_O$. The reason
+for this is because when $O$ is moving towards $S$, the change in distance between the two is
+negative. In contrast, if $O$ is moving away from $S$, the change in distance between the two is 
+positive.
+
+\subsection{Source in Motion, Observer at Rest}
+
+Let us consider the case where the source is moving tward the observer.
+Similar to when the source is at rest and observer is in motion, the frequency increases and thus 
+the wavelength decreases. However, let us now focus on the wavelength instead. For every wave emitted
+$-$ each lasting a time interval $T$ (period) $-$, the source moves by a distance of $v_S T = v_s/f$.
+Thus, the wavelength is shortened by that amount. Therefore, the observed wavelength will become 
+\begin{equation}
+\lambda_O = \lambda - v_S T = \lambda - \frac{v_S}{f_S}
+\end{equation}
+Recall that $f = v/\lambda$ and $v = \lambda f$, we can plug the observed wavelength in to obtain 
+\begin{equation}\label{17.17}
+f_O = \frac{v}{\lambda_O} = \frac{v f_S}{\lambda f_S - v_S}
+    = \left(\frac{v}{v - v_S}\right)f_S
+\end{equation}
+
+If the source is moving away from the observer, simply flip the sign for $v_S$ in $v_O - v_S$.
+
+\subsection{General Case}
+
+To generalize the Doppler effect for two possibly moving objects source and observer, we can combine
+equations~\eqref{17.15} and~\eqref{17.17} to obtain 
+\begin{equation}\label{17.19}
+    f_O = \left(\frac{v + v_O}{v - v_S}\right)f_S
+\end{equation}
+where the signs depend on if each object is moving and in what direction. The positive represents
+when an object is moving towards the other, while negative represents moving away.

@@ -1,0 +1,119 @@
+\chapter{Image Formation}
+
+When light encounters a surface, images can be formed through reflection or refraction.
+This allows us to design mirros and lenses to form images that we want.
+
+There are two main types of images.
+\begin{itemize}
+    \item \textbf{Real image}: image formed by real light rays intersecting at the image point,
+        usually involves a lens
+    \item \textbf{Virtual image}: image formed by extrapolating light rays to intersect at the 
+        image point, usually involves a mirror
+\end{itemize}
+
+\section{Images Formed by Flat Mirrors}
+
+Consider a point source of light placed at $O$ with distance $p$ from a flat mirror. $p$ is called 
+the \textbf{object distance}. The light rays emitted from the source hits the mirror and gets
+reflected. Extending the rays to \textit{behind} the mirror until they intersect at point $I$,
+this forms a virtual image there with \textbf{image distance} $q$ from the mirror.
+\cim{images/ch36/36_1.png}{0.5}
+Note that while point source is just a point in space, we can combine many point sources together
+to form an extended object.
+
+Geometry can also be used to examine the properties of the image of extended objects. To do so,
+pick a point of the object to be the point source, then pick two light rays originating from that point.
+Suppose one of the rays originates from $P$ and moves perpendicular to the object and hits the mirror
+at $Q$ and gets reflected straight back. The other ray follows path $PR$ and reflects as shown in
+diagram below. For both reflected rays, we extend each toward \textit{behind} the wall until 
+they intersect at point $P'$. This results in a virtual image.
+\cim{images/ch36/36_2.png}{0.5}
+Notice that $PQR$ and $P'QR$ are congruent, so $PQ = P'Q$ and $|p| = |q|$.
+
+Suppose that our object has height $h$ and its image has height $h'$, the \textbf{lateral
+magnification} $M$ can be defined as
+\begin{equation}\label{36.1}
+    M = \frac{h'}{h}
+\end{equation}
+This definition also works for any type of mirror and lenses. For a flat mirror, $M = 1$ in all cases
+since $h' = h$. This also means that our image is up right because $M$ is positive.
+
+Flat mirrors also make it seem like our image is flipped vertically. However, this is not actually
+a left-right reversal but actually front-back.
+
+\section{Images Formed by Spherical Mirrors}
+
+\subsection{Concave Mirrors}
+
+\cim{images/ch36/36_6.png}{0.7}
+
+Consider a concave mirror with radius $r$ and center of curvature located at point $C$. This type
+of mirror focuses parallel incoming light rays to a real focus point $F$. The distance $f$ from $F$ to
+a perpendicular point of the mirror can be computed by $f = r/2$.
+
+Now, consider a point source of light placed at $O$, lying on the central axis line somewhere
+\textit{behind} $C$ and two light rays diverging from it. Note that the two light rays being considered
+make small angles with the central axis, and are called \textbf{paraxial rays}. If the angle is too big,
+the rays will converge to a point that is not $F$ and creates a blurred image. This effect is called 
+\textbf{spherical aberration}.
+
+If the distance $p$ and radius $r$ are already known, we can compute the image distance $q$ from them.
+Consider two rays of light coming from the same point on object $O$. One ray perpendicularly hit the 
+mirror and reflects right back while the other touches the mirror where the central axis touches it.
+We can then use the law of reflection to find where this ray will reflect. The point $I$ at which 
+the reflected rays intersect will be the location of where the identical part of the image will be.
+\cim{images/ch36/36_9.png}{0.75}
+Notice that $\tan\theta = h/p$ (orange triangle) and $\tan\theta = -h'q$ (yellow triangle) where the 
+negative sign is there because the image is inverted. Thus, we can find the magnification $M$ by 
+\begin{equation}\label{36.2}
+    M = \frac{h'}{h} = - \frac{p}{q}
+\end{equation}
+
+\begin{itemize}
+    \item $q$ is positive for real image and negative for virtual image 
+    \item $p$ is positive for real object and negative for virtual object 
+    \item $m>0$ when image is upright 
+    \item $m<0$ when image is inverted
+\end{itemize}
+
+Furthermore, we can follow this table for sign conventions for mirrors.
+\cim{images/ch36/t36_1.png}{1}
+
+\subsection{Convex Mirror}
+
+There is no need to derive any equation because we can use the same equations as with concave mirrors.
+The biggest difference is that the image will now be virtual and always upright.
+
+\subsection{Mirror Equation}
+
+\begin{equation}
+    \frac{1}{p} + \frac{1}{q} = \frac{1}{f}
+\end{equation}
+where $f$ is the focal length.
+
+\section{Images Formed by Thin Lenses}
+
+Lens is an optical system with two refracting surfaces. To simplify things, we assume that two 
+spherical surfaces of the lens are close enough we can just ignore the distance between them.
+
+Here, focal length $f$ is the distance from the lens to the point where the parallel rays converge,
+both really and virtually.
+\cim{images/ch36/36_23a.png}{0.6}
+
+The position of the image formed by a thin lens can be computed using the \textbf{thin lens equation}
+which looks very similar to the mirror equation.
+\begin{equation}
+    \frac{1}{p} + \frac{1}{q} = \frac{1}{f}
+\end{equation}
+\begin{equation}
+    M = \frac{h'}{h} = - \frac{p}{q}
+\end{equation}
+However, notice that the real/virtual-ness of the images are opposite of mirrors. Thus, we can use 
+the following sign conventions for thin lenses instead.
+\cim{images/ch36/t36_3.png}{1}
+
+\subsection{Combinations of Thin Lenses}
+
+When combining thin lenses, the image formed by the previous lens is the object for the next lens.
+Here, the total magnification is computed as a product of every magnification of every lens.
+\[ m_{total} = m_1 m_2 m_3 \cdots m_n \]
